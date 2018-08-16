@@ -27,6 +27,7 @@ function buscaFrase(){
     $("#spinner").toggle();
     var fraseId = $("#frase-id").val();
     console.log("Id da minha frase:" + fraseId);
+    
     var dados = {id: fraseId};
 
     $.get("http://localhost:3000/frases",dados,trocaFrase)
@@ -42,5 +43,8 @@ function buscaFrase(){
 }
 
 function trocaFrase(data){
-    console.log(data);
+    var frase = $(".frase");
+    frase.text(data.texto);
+    atualizaTamanhoFrase();
+    atualizaTempoInicial(data.tempo);
 }
