@@ -8,6 +8,11 @@ $(document).ready(function(){
     inicializaMarcadores();
     $("#botao-reiniciar").click(reiniciaJogo);
     atualizaPlacar();
+
+    $("#usuarios").selectize({
+        create: true,
+        sortField: 'text'
+    });
 });
 
 function atualizaTempoInicial(tempo){
@@ -55,6 +60,7 @@ function finalizaJogo(){
     campo.attr("disabled", true);
     campo.toggleClass("campo-desativado");
     inserePlacar();
+    
 }
 
 function inicializaMarcadores(){
