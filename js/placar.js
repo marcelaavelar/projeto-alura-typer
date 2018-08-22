@@ -77,7 +77,7 @@ function sincronizaPlacar(){
 
     $.post("http://localhost:3000/placar",dados,function(){
         console.log("Salvou o placar no servidor");
-        $(".tooltip").tooltipster("open").tooltipster("Sucesso ao sincronizar");
+        $(".tooltip").tooltipster("open");
     }).fail(function(){
         $(".tooltip").tooltipster("open").tooltipster("content","Falha ao sincronizar");
     }).always(function(){
